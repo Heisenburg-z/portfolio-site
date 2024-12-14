@@ -1,8 +1,12 @@
 import React from 'react';
+import Portfolio from './Portfolio'; // Adjust the path if needed
 
 function App() {
-  const value = 'World';
-  return <div>Hello {value}</div>;
+  return (
+    <div className="App">
+      <Portfolio />
+    </div>
+  );
 }
 
 export default App;
