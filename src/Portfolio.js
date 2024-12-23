@@ -14,7 +14,7 @@ import {
 } from 'lucide-react';
 
 // Profile Image (replace with actual image path)
-const PROFILE_IMAGE = '/api/placeholder/400/400';
+const PROFILE_IMAGE = './images/me.jpg';
 
 // Project Data
 const PROJECTS = [
@@ -24,7 +24,7 @@ const PROJECTS = [
     technologies: ['MongoDB', 'Express.js', 'React', 'Node.js', 'Codecov', 'Vercel'],
     githubLink: 'https://github.com/TumeloMkwambe/eWits',
     demoLink: 'https://ewits-front.vercel.app/',
-    imageUrl: '/api/placeholder/600/400'
+    imageUrl: '/images/ewits.png'
   },
   {
     name: 'Maze 3D',
@@ -32,7 +32,7 @@ const PROJECTS = [
     technologies: ['Three.js', 'WebGL', 'JavaScript', 'Physics Engine', 'Procedural Generation'],
     githubLink: 'https://github.com/dashboard',
     demoLink: 'https://lamp.ms.wits.ac.za/~spixelwavesyndicates/',
-    imageUrl: '/api/placeholder/600/400'
+    imageUrl: '/images/maze.png'
   },
   {
     name: 'CampusTrade App',
@@ -40,7 +40,15 @@ const PROJECTS = [
     technologies: ['React.js', 'MongoDB', 'Express', 'Node.js', 'WebSocket', 'Stripe'],
     githubLink: 'https://github.com/Heisenburg-z/CampusTrade',
     demoLink: 'https://github.com/Heisenburg-z/CampusTrade',
-    imageUrl: '/api/placeholder/600/400'
+    imageUrl: '/images/ctrade.png'
+  },
+  {
+    name: 'Sectional titles and property management',
+    description: 'Sectional title describes the separate ownership of a unit within a group-owned complex or development. Simply put, the term refers to a complex with flats, townhouses or apartments that has multiple owners; each owning a section of the overall property. The collective of owners typically elect a body corporate made up of some of the owners to take responsibility for some of the tasks required to maintain the property. This includes overseeing the enforcement of rules and regulations, the security, upkeep and maintenance of the property, and managing communication with the owners, renters and related parties among other things.',
+    technologies: ['React.js', 'Firebase', 'Express', 'Node.js', 'WebSocket', 'Azure'],
+    githubLink: 'https://github.com/Heisenburg-z/Sectional-titles-property-management',
+    demoLink: 'https://witty-plant-0efd7e103.5.azurestaticapps.net/',
+    imageUrl: '/images/property.png'
   }
 ];
 
@@ -151,17 +159,19 @@ const PortfolioWebsite = () => {
       <div className="text-center px-4">
         <div className="relative w-48 h-48 mx-auto mb-6">
           <div className="absolute inset-0 rounded-full bg-blue-500 animate-pulse"></div>
-          <img 
+          {<img 
             src={PROFILE_IMAGE} 
             alt="Thapelo Ndlovu" 
             className="relative w-full h-full rounded-full object-cover border-4 border-blue-500 shadow-2xl"
-          />
+          /> 
+          }
         </div>
         <h1 className="text-4xl md:text-5xl font-bold mb-4">
           Hi, I'm Thapelo Ndlovu
         </h1>
         <p className="text-xl md:text-2xl mb-6">
-          Developer, Innovator, and Game Enthusiast
+A driven Computer Science student specializing in software design, web development, and computer applications, with expertise in parallel computing, machine learning, and operating systems. Leveraging a solid foundation in applied mathematics to solve complex problems and create innovative solutions. Passionate about translating theoretical concepts into impactful real-world applications.
+
         </p>
         <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
           <button 
@@ -307,8 +317,8 @@ const PortfolioWebsite = () => {
       <div className="container mx-auto px-4 text-center">
         <div className="flex justify-center space-x-6 mb-6">
           {[
-            { icon: LinkedinIcon, link: 'https://linkedin.com/in/ThapeloNdlovu', label: 'LinkedIn' },
-            { icon: GithubIcon, link: 'https://github.com/ThapeloNdlovu', label: 'GitHub' },
+            { icon: LinkedinIcon, link: 'https://www.linkedin.com/in/thapelo-ndlovu-1165152aa/', label: 'LinkedIn' },
+            { icon: GithubIcon, link: 'https://github.com/Heisenburg-z', label: 'GitHub' },
             { icon: TwitterIcon, link: 'https://twitter.com/ThapeloNdlovu', label: 'Twitter' }
           ].map(({ icon: Icon, link, label }) => (
             <a 
@@ -449,7 +459,7 @@ const PortfolioWebsite = () => {
       <NavBar />
       <HeroSection />
       <ProjectSection />
-      <SkillSection />  {/* Added SkillSection  */}
+       <SkillSection />  {/* Added SkillSection */}
       <ContactSection />
       <Footer />
     </div>
