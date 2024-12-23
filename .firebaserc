@@ -1,5 +1,12 @@
 {
   "projects": {
-    "default": "portfolio-43d9b"
-  }
+    "default": "portfolio-43d9b",
+    "production": "portfolio-43d9b"
+  },
+  "targets": {
+    "portfolio-43d9b": {
+      "hosting": {}
+    }
+  },
+  "etags": {}
 }
