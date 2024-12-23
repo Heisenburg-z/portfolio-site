@@ -1,0 +1,91 @@
+[debug] [2024-12-23T03:07:50.054Z] ----------------------------------------------------------------------
+[debug] [2024-12-23T03:07:50.057Z] Command:       /home/thapelo/.nvm/versions/node/v18.20.5/bin/node /home/thapelo/.nvm/versions/node/v18.20.5/bin/firebase deploy --only hosting
+[debug] [2024-12-23T03:07:50.058Z] CLI Version:   13.29.1
+[debug] [2024-12-23T03:07:50.058Z] Platform:      linux
+[debug] [2024-12-23T03:07:50.058Z] Node Version:  v18.20.5
+[debug] [2024-12-23T03:07:50.058Z] Time:          Mon Dec 23 2024 05:07:50 GMT+0200 (South Africa Standard Time)
+[debug] [2024-12-23T03:07:50.059Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-12-23T03:07:50.163Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-12-23T03:07:50.164Z] > authorizing via signed-in user (thapelondlovu74@gmail.com)
+[debug] [2024-12-23T03:07:50.164Z] [iam] checking project portfolio-43d9b for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2024-12-23T03:07:50.166Z] Checked if tokens are valid: false, expires at: 1734920306765
+[debug] [2024-12-23T03:07:50.166Z] Checked if tokens are valid: false, expires at: 1734920306765
+[debug] [2024-12-23T03:07:50.167Z] > refreshing access token with scopes: []
+[debug] [2024-12-23T03:07:50.169Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2024-12-23T03:07:50.169Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2024-12-23T03:07:50.733Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2024-12-23T03:07:50.733Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2024-12-23T03:07:50.742Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/portfolio-43d9b:testIamPermissions [none]
+[debug] [2024-12-23T03:07:50.742Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/portfolio-43d9b:testIamPermissions x-goog-quota-user=projects/portfolio-43d9b
+[debug] [2024-12-23T03:07:50.742Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/portfolio-43d9b:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2024-12-23T03:07:52.471Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/portfolio-43d9b:testIamPermissions 200
+[debug] [2024-12-23T03:07:52.471Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/portfolio-43d9b:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2024-12-23T03:07:52.473Z] Checked if tokens are valid: true, expires at: 1734926869733
+[debug] [2024-12-23T03:07:52.473Z] Checked if tokens are valid: true, expires at: 1734926869733
+[debug] [2024-12-23T03:07:52.474Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/portfolio-43d9b [none]
+[debug] [2024-12-23T03:07:53.185Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/portfolio-43d9b 200
+[debug] [2024-12-23T03:07:53.186Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/portfolio-43d9b {"projectId":"portfolio-43d9b","projectNumber":"885258878009","displayName":"Portfolio","name":"projects/portfolio-43d9b","resources":{"hostingSite":"portfolio-43d9b"},"state":"ACTIVE","etag":"1_0d2fe33a-b1e0-4498-8677-e46e66c2286e"}
+[info] 
+[info] === Deploying to 'portfolio-43d9b'...
+[info] 
+[info] i  deploying hosting 
+[debug] [2024-12-23T03:07:53.195Z] Checked if tokens are valid: true, expires at: 1734926869733
+[debug] [2024-12-23T03:07:53.195Z] Checked if tokens are valid: true, expires at: 1734926869733
+[debug] [2024-12-23T03:07:53.195Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/portfolio-43d9b/versions [none]
+[debug] [2024-12-23T03:07:53.195Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/portfolio-43d9b/versions {"status":"CREATED","labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2024-12-23T03:07:55.437Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/portfolio-43d9b/versions 200
+[debug] [2024-12-23T03:07:55.437Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/portfolio-43d9b/versions {"name":"projects/885258878009/sites/portfolio-43d9b/versions/ddf3e2ae567b5565","status":"CREATED","config":{},"labels":{"deployment-tool":"cli-firebase"}}
+[info] i  hosting[portfolio-43d9b]: beginning deploy... 
+[info] i  hosting[portfolio-43d9b]: found 18 files in build 
+[debug] [2024-12-23T03:07:55.461Z] [hosting] uploading with 200 concurrency
+[debug] [2024-12-23T03:07:55.870Z] Checked if tokens are valid: true, expires at: 1734926869733
+[debug] [2024-12-23T03:07:55.870Z] Checked if tokens are valid: true, expires at: 1734926869733
+[debug] [2024-12-23T03:07:55.871Z] [hosting] hash cache [YnVpbGQ] stored for 18 files
+[debug] [2024-12-23T03:07:55.872Z] [hosting][hash queue][FINAL] {"max":372,"min":47,"avg":102.27777777777777,"active":0,"complete":18,"success":18,"errored":0,"retried":0,"total":18,"elapsed":382}
+[debug] [2024-12-23T03:07:55.872Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/885258878009/sites/portfolio-43d9b/versions/ddf3e2ae567b5565:populateFiles [none]
+[debug] [2024-12-23T03:07:55.872Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/885258878009/sites/portfolio-43d9b/versions/ddf3e2ae567b5565:populateFiles {"files":{"/robots.txt":"2544ca049f223a42bff01f72ad930a5edba75bbb7199d0f8430a02ff5aca16ec","/manifest.json":"c12dd51ed2c8ac94acf3c25d1f0c541d667c90c8557ac43cb42d0a6df086bd7f","/logo512.png":"9ab6cb941e493973baf9755bd3fc76988762e6b514d5bc365aeaccefa0de034f","/logo192.png":"50bd60c6fefdd7de57fb652cf717e33c712106ffe0a32da5f75a12bf22cecbc0","/index.html":"41de9f811c3d88c73ac58dcb5b8e1637dcdc7186a257757e8cd626e819bde258","/favicon.ico":"bb958818b711b5128cbf8f6f2a575286183d01d1c6fb45d584364d94ab73b9cb","/asset-manifest.json":"97cc793ad7e4aa407ea76042c5584f3ea1abd6640904a183b9283ed86b561dbe","/static/js/main.62e7c3a4.js.LICENSE.txt":"a3936dc97b05178a2eb6333db1a2c7087771e2124a34650c9a5565952db7b188","/static/css/main.dc04b0e1.css.map":"4ede523074fe84a667ae0a757120fb73c0993b3ef451fd665d32a8a8ee00bd0c","/static/css/main.dc04b0e1.css":"2d82d2515a75575ee75ac72ee5dd6ff7572996531e2386d5e7cfbd4a4b95a56e","/images/maze.png":"496e925986a40f2819a24952248053bd78101098ac0b320c393f8a64ff79c257","/static/js/main.62e7c3a4.js":"52f34bcaf2b5677cef882279db2e9123cbe51ef07033aa7076f13609b7d0c7f5","/images/property.png":"f89cb05428d2608be967a0d08d838a56beccddec5bda20d300f6de0ed3b76565","/images/ctrade.png":"e62d9bdb7035ad02f70902b6f0b6477885b7783b52514cac6b97d6d1c0fae4c4","/images/ewits.png":"e231457c3f47849a71b84e8250646f94969197760c2747569459b3065a260066","/static/js/main.62e7c3a4.js.map":"9fe084106cef0eae5fbd7bd2e144074b00e19bf68e22d9b3ca0bebf986cc3090","/images/me.HEIC":"b467d865c98e723f2f02a03165e4fa5ee182930a7590d97e9dac5a77848c96b0","/images/me.jpg":"009d744b26b969c8da042dd77d56a1bdc0417aab8c4dffcb59b04af704a4fbe1"}}
+[debug] [2024-12-23T03:07:57.791Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/885258878009/sites/portfolio-43d9b/versions/ddf3e2ae567b5565:populateFiles 200
+[debug] [2024-12-23T03:07:57.791Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/885258878009/sites/portfolio-43d9b/versions/ddf3e2ae567b5565:populateFiles {"uploadRequiredHashes":["41de9f811c3d88c73ac58dcb5b8e1637dcdc7186a257757e8cd626e819bde258","f89cb05428d2608be967a0d08d838a56beccddec5bda20d300f6de0ed3b76565","52f34bcaf2b5677cef882279db2e9123cbe51ef07033aa7076f13609b7d0c7f5","9fe084106cef0eae5fbd7bd2e144074b00e19bf68e22d9b3ca0bebf986cc3090","496e925986a40f2819a24952248053bd78101098ac0b320c393f8a64ff79c257","b467d865c98e723f2f02a03165e4fa5ee182930a7590d97e9dac5a77848c96b0","009d744b26b969c8da042dd77d56a1bdc0417aab8c4dffcb59b04af704a4fbe1","e231457c3f47849a71b84e8250646f94969197760c2747569459b3065a260066","e62d9bdb7035ad02f70902b6f0b6477885b7783b52514cac6b97d6d1c0fae4c4","97cc793ad7e4aa407ea76042c5584f3ea1abd6640904a183b9283ed86b561dbe"],"uploadUrl":"https://upload-firebasehosting.googleapis.com/upload/sites/portfolio-43d9b/versions/ddf3e2ae567b5565/files"}
+[debug] [2024-12-23T03:07:57.792Z] Checked if tokens are valid: true, expires at: 1734926869733
+[debug] [2024-12-23T03:07:57.792Z] Checked if tokens are valid: true, expires at: 1734926869733
+[debug] [2024-12-23T03:07:57.793Z] Checked if tokens are valid: true, expires at: 1734926869733
+[debug] [2024-12-23T03:07:57.793Z] Checked if tokens are valid: true, expires at: 1734926869733
+[debug] [2024-12-23T03:07:57.793Z] Checked if tokens are valid: true, expires at: 1734926869733
+[debug] [2024-12-23T03:07:57.793Z] Checked if tokens are valid: true, expires at: 1734926869733
+[debug] [2024-12-23T03:07:57.793Z] Checked if tokens are valid: true, expires at: 1734926869733
+[debug] [2024-12-23T03:07:57.793Z] Checked if tokens are valid: true, expires at: 1734926869733
+[debug] [2024-12-23T03:07:57.794Z] Checked if tokens are valid: true, expires at: 1734926869733
+[debug] [2024-12-23T03:07:57.794Z] Checked if tokens are valid: true, expires at: 1734926869733
+[debug] [2024-12-23T03:07:57.794Z] Checked if tokens are valid: true, expires at: 1734926869733
+[debug] [2024-12-23T03:07:57.794Z] Checked if tokens are valid: true, expires at: 1734926869733
+[debug] [2024-12-23T03:07:57.794Z] Checked if tokens are valid: true, expires at: 1734926869733
+[debug] [2024-12-23T03:07:57.794Z] Checked if tokens are valid: true, expires at: 1734926869733
+[debug] [2024-12-23T03:07:57.794Z] Checked if tokens are valid: true, expires at: 1734926869733
+[debug] [2024-12-23T03:07:57.794Z] Checked if tokens are valid: true, expires at: 1734926869733
+[debug] [2024-12-23T03:07:57.795Z] Checked if tokens are valid: true, expires at: 1734926869733
+[debug] [2024-12-23T03:07:57.795Z] Checked if tokens are valid: true, expires at: 1734926869733
+[debug] [2024-12-23T03:07:57.795Z] Checked if tokens are valid: true, expires at: 1734926869733
+[debug] [2024-12-23T03:07:57.795Z] Checked if tokens are valid: true, expires at: 1734926869733
+[debug] [2024-12-23T03:07:57.795Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/portfolio-43d9b/versions/ddf3e2ae567b5565/files/41de9f811c3d88c73ac58dcb5b8e1637dcdc7186a257757e8cd626e819bde258 [none]
+[debug] [2024-12-23T03:07:57.795Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/portfolio-43d9b/versions/ddf3e2ae567b5565/files/41de9f811c3d88c73ac58dcb5b8e1637dcdc7186a257757e8cd626e819bde258 [stream]
+[debug] [2024-12-23T03:07:57.797Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/portfolio-43d9b/versions/ddf3e2ae567b5565/files/f89cb05428d2608be967a0d08d838a56beccddec5bda20d300f6de0ed3b76565 [none]
+[debug] [2024-12-23T03:07:57.797Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/portfolio-43d9b/versions/ddf3e2ae567b5565/files/f89cb05428d2608be967a0d08d838a56beccddec5bda20d300f6de0ed3b76565 [stream]
+[debug] [2024-12-23T03:07:57.799Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/portfolio-43d9b/versions/ddf3e2ae567b5565/files/52f34bcaf2b5677cef882279db2e9123cbe51ef07033aa7076f13609b7d0c7f5 [none]
+[debug] [2024-12-23T03:07:57.799Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/portfolio-43d9b/versions/ddf3e2ae567b5565/files/52f34bcaf2b5677cef882279db2e9123cbe51ef07033aa7076f13609b7d0c7f5 [stream]
+[debug] [2024-12-23T03:07:57.801Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/portfolio-43d9b/versions/ddf3e2ae567b5565/files/9fe084106cef0eae5fbd7bd2e144074b00e19bf68e22d9b3ca0bebf986cc3090 [none]
+[debug] [2024-12-23T03:07:57.801Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/portfolio-43d9b/versions/ddf3e2ae567b5565/files/9fe084106cef0eae5fbd7bd2e144074b00e19bf68e22d9b3ca0bebf986cc3090 [stream]
+[debug] [2024-12-23T03:07:57.804Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/portfolio-43d9b/versions/ddf3e2ae567b5565/files/496e925986a40f2819a24952248053bd78101098ac0b320c393f8a64ff79c257 [none]
+[debug] [2024-12-23T03:07:57.804Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/portfolio-43d9b/versions/ddf3e2ae567b5565/files/496e925986a40f2819a24952248053bd78101098ac0b320c393f8a64ff79c257 [stream]
+[debug] [2024-12-23T03:07:57.805Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/portfolio-43d9b/versions/ddf3e2ae567b5565/files/b467d865c98e723f2f02a03165e4fa5ee182930a7590d97e9dac5a77848c96b0 [none]
+[debug] [2024-12-23T03:07:57.805Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/portfolio-43d9b/versions/ddf3e2ae567b5565/files/b467d865c98e723f2f02a03165e4fa5ee182930a7590d97e9dac5a77848c96b0 [stream]
+[debug] [2024-12-23T03:07:57.807Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/portfolio-43d9b/versions/ddf3e2ae567b5565/files/009d744b26b969c8da042dd77d56a1bdc0417aab8c4dffcb59b04af704a4fbe1 [none]
+[debug] [2024-12-23T03:07:57.807Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/portfolio-43d9b/versions/ddf3e2ae567b5565/files/009d744b26b969c8da042dd77d56a1bdc0417aab8c4dffcb59b04af704a4fbe1 [stream]
+[debug] [2024-12-23T03:07:57.808Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/portfolio-43d9b/versions/ddf3e2ae567b5565/files/e231457c3f47849a71b84e8250646f94969197760c2747569459b3065a260066 [none]
+[debug] [2024-12-23T03:07:57.809Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/portfolio-43d9b/versions/ddf3e2ae567b5565/files/e231457c3f47849a71b84e8250646f94969197760c2747569459b3065a260066 [stream]
+[debug] [2024-12-23T03:07:57.810Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/portfolio-43d9b/versions/ddf3e2ae567b5565/files/e62d9bdb7035ad02f70902b6f0b6477885b7783b52514cac6b97d6d1c0fae4c4 [none]
+[debug] [2024-12-23T03:07:57.810Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/portfolio-43d9b/versions/ddf3e2ae567b5565/files/e62d9bdb7035ad02f70902b6f0b6477885b7783b52514cac6b97d6d1c0fae4c4 [stream]
+[debug] [2024-12-23T03:07:57.811Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/portfolio-43d9b/versions/ddf3e2ae567b5565/files/97cc793ad7e4aa407ea76042c5584f3ea1abd6640904a183b9283ed86b561dbe [none]
+[debug] [2024-12-23T03:07:57.812Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/portfolio-43d9b/versions/ddf3e2ae567b5565/files/97cc793ad7e4aa407ea76042c5584f3ea1abd6640904a183b9283ed86b561dbe [stream]
+[debug] [2024-12-23T03:07:57.813Z] [hosting][populate queue][FINAL] {"max":1925,"min":1925,"avg":1925,"active":0,"complete":1,"success":1,"errored":0,"retried":0,"total":1,"elapsed":1943}
+[debug] [2024-12-23T03:07:57.814Z] [hosting] uploads queued: 10
