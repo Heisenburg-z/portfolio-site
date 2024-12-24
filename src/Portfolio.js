@@ -1,4 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
+import BlogSection from './BlogSection';
+import AdditionalSections from './AdditionalSections';
 import { 
   Home, 
   Code, 
@@ -458,8 +460,10 @@ A driven Computer Science student specializing in software design, web developme
     <div className="bg-gray-50 overflow-x-hidden">
       <NavBar />
       <HeroSection />
+      <AdditionalSections/>
       <ProjectSection />
-       <SkillSection />  {/* Added SkillSection */}
+      <BlogSection />
+      {/* <SkillSection />  Added SkillSection */}
       <ContactSection />
       <Footer />
     </div>
