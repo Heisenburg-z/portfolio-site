@@ -24,7 +24,7 @@ const PROJECTS = [
     technologies: ['MongoDB', 'Express.js', 'React', 'Node.js', 'Codecov', 'Vercel'],
     githubLink: 'https://github.com/TumeloMkwambe/eWits',
     demoLink: 'https://ewits-front.vercel.app/',
-    imageUrl: '/images/ewits.png'
+    imageUrl: 'https://images.unsplash.com/photo-1644370644949-b175294cbceb?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8dGlja2V0c3xlbnwwfHwwfHx8MA%3D%3D'
   },
   {
     name: 'Maze 3D',
@@ -32,7 +32,7 @@ const PROJECTS = [
     technologies: ['Three.js', 'WebGL', 'JavaScript', 'Physics Engine', 'Procedural Generation'],
     githubLink: 'https://github.com/dashboard',
     demoLink: 'https://lamp.ms.wits.ac.za/~spixelwavesyndicates/',
-    imageUrl: '/images/maze.png'
+    imageUrl: 'https://images.unsplash.com/photo-1634152962476-4b8a00e1915c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzB8fGdhbWUlMjBsb2dvfGVufDB8fDB8fHww'
   },
   {
     name: 'CampusTrade App',
@@ -40,7 +40,7 @@ const PROJECTS = [
     technologies: ['React.js', 'MongoDB', 'Express', 'Node.js', 'WebSocket', 'Stripe'],
     githubLink: 'https://github.com/Heisenburg-z/CampusTrade',
     demoLink: 'https://github.com/Heisenburg-z/CampusTrade',
-    imageUrl: '/images/ctrade.png'
+    imageUrl: 'https://images.unsplash.com/photo-1570170615381-62c299188814?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8YnV5JTIwbG9nb3xlbnwwfHwwfHx8MA%3D%3D'
   },
   {
     name: 'Sectional titles and property management',
@@ -48,7 +48,7 @@ const PROJECTS = [
     technologies: ['React.js', 'Firebase', 'Express', 'Node.js', 'WebSocket', 'Azure'],
     githubLink: 'https://github.com/Heisenburg-z/Sectional-titles-property-management',
     demoLink: 'https://witty-plant-0efd7e103.5.azurestaticapps.net/',
-    imageUrl: '/images/property.png'
+    imageUrl: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cHJvcGVydHl8ZW58MHx8MHx8fDA%3D'
   }
 ];
 
