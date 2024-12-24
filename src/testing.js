@@ -1,164 +1,117 @@
 import React from 'react';
-import { 
-  Book, 
-  Trophy, 
-  Gamepad, 
-  Brain, 
-  Code, 
-  Play,
-  GraduationCap,
-  Briefcase,
-  Wrench
-} from 'lucide-react';
+import { ChevronDown } from 'lucide-react';
 
-const EducationSection = () => (
-  <div className="py-16 bg-gray-50">
-    <div className="container mx-auto px-4">
-      <h2 className="text-4xl font-bold text-center mb-12">Education</h2>
-      <div className="max-w-3xl mx-auto">
-        <div className="bg-white rounded-lg shadow-lg p-6 mb-6">
-          <h3 className="text-2xl font-semibold text-blue-600 mb-2">University of Witwatersrand</h3>
-          <p className="text-lg font-medium mb-2">Bachelor of Science</p>
-          <p className="text-gray-600 mb-4">Computer Science and Applied Mathematics</p>
-          
-          <div className="space-y-2">
-            <h4 className="font-medium">Majors:</h4>
-            <ul className="list-disc list-inside text-gray-600 ml-4">
-              <li>Mathematics</li>
-              <li>Computer Science</li>
-              <li>Applied Mathematics</li>
-            </ul>
-            
-            <h4 className="font-medium mt-4">Key Modules:</h4>
-            <ul className="list-disc list-inside text-gray-600 ml-4">
-              <li>Physics</li>
-              <li>Computer Applications</li>
-              <li>Advanced Mathematics</li>
-            </ul>
-          </div>
-        </div>
-
-        <div className="bg-white rounded-lg shadow-lg p-6">
-          <h3 className="text-2xl font-semibold text-blue-600 mb-2">Centre of Science and Technology</h3>
-          <p className="text-lg font-medium mb-2">Matriculation (Grade 8-12)</p>
-          <p className="text-gray-600">Focus Areas: Mathematics, Physical Sciences, Biology, Information Technology, English, Life Orientation, and Xhosa</p>
-        </div>
-      </div>
+const AnimatedText = ({ children, delay = '0s' }) => (
+  <div className="overflow-hidden">
+    <div 
+      className="animate-slideUp" 
+      style={{ animationDelay: delay }}
+    >
+      {children}
     </div>
   </div>
 );
 
-const HobbiesSection = () => {
-  const hobbies = [
-    {
-      icon: Brain,
-      title: "Chess Streaming",
-      description: "Host and stream chess games online, engaging with a global audience and demonstrating analytical thinking in competitive matches."
-    },
-    {
-      icon: Gamepad,
-      title: "Game Development",
-      description: "Passionate about creating interactive 3D games using Three.js, including soccer-themed games and space-themed projects with physics-based dynamics."
-    },
-    {
-      icon: Code,
-      title: "Open Source",
-      description: "Active contributor to open-source projects, focusing on web applications using MERN stack and maintaining modular codebases on GitHub."
-    }
-  ];
+const HeroSection = () => {
+  const scrollToSection = (id) => {
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+  };
 
   return (
-    <div className="py-16 bg-white">
-      <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold text-center mb-12">Hobbies & Interests</h2>
-        <div className="grid md:grid-cols-3 gap-8">
-          {hobbies.map((hobby, index) => (
-            <div key={index} className="bg-gray-50 rounded-lg p-6 text-center hover:shadow-lg transition-shadow duration-300">
-              <hobby.icon className="w-12 h-12 mx-auto mb-4 text-blue-600" />
-              <h3 className="text-xl font-semibold mb-3">{hobby.title}</h3>
-              <p className="text-gray-600">{hobby.description}</p>
-            </div>
-          ))}
+    <div 
+      className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 to-blue-900 text-white overflow-hidden"
+    >
+      {/* Animated background dots */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute w-4 h-4 bg-blue-500 rounded-full animate-float top-1/4 left-1/4 opacity-20"></div>
+        <div className="absolute w-6 h-6 bg-blue-400 rounded-full animate-float top-3/4 left-1/3 opacity-20" 
+             style={{ animationDelay: '1s' }}></div>
+        <div className="absolute w-3 h-3 bg-blue-300 rounded-full animate-float top-1/2 right-1/4 opacity-20"
+             style={{ animationDelay: '2s' }}></div>
+      </div>
+
+      <div className="text-center px-4 relative z-10">
+        {/* Profile image with animated ring */}
+        <div className="relative w-48 h-48 mx-auto mb-6 animate-fadeIn">
+          <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 animate-spin-slow"></div>
+          <div className="absolute inset-2 rounded-full bg-gradient-to-br from-gray-900 to-blue-900"></div>
+          <img 
+            src="/api/placeholder/192/192"
+            alt="Thapelo Ndlovu" 
+            className="relative w-full h-full rounded-full object-cover border-4 border-blue-500 shadow-2xl animate-fadeIn"
+          />
+          <div className="absolute -inset-2 rounded-full border-2 border-blue-500 opacity-50 animate-ping"></div>
+        </div>
+
+        {/* Animated text sections */}
+        <AnimatedText delay="0.5s">
+          <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent">
+            Hi, I'm Thapelo Ndlovu
+          </h1>
+        </AnimatedText>
+
+        <AnimatedText delay="0.7s">
+          <p className="text-xl md:text-2xl mb-6 text-blue-50">
+            A driven Computer Science student specializing in software design, web development, 
+            and computer applications, with expertise in parallel computing, machine learning, 
+            and operating systems. Leveraging a solid foundation in applied mathematics to 
+            solve complex problems and create innovative solutions. Passionate about translating 
+            theoretical concepts into impactful real-world applications.
+          </p>
+        </AnimatedText>
+
+        {/* Animated buttons */}
+        <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4 animate-fadeIn" 
+             style={{ animationDelay: '1s' }}>
+          <button 
+            onClick={() => scrollToSection('projects')}
+            className="group bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-full flex items-center justify-center transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
+          >
+            View Projects 
+            <ChevronDown className="ml-2 group-hover:animate-bounce" />
+          </button>
+          <button 
+            onClick={() => scrollToSection('contact')}
+            className="border border-white hover:bg-white hover:text-gray-900 px-6 py-3 rounded-full transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
+          >
+            Contact Me
+          </button>
         </div>
       </div>
     </div>
   );
 };
 
-const TechnicalExpertiseSection = () => {
-  const expertise = [
-    {
-      category: "Programming Languages",
-      skills: ["JavaScript", "Python", "C", "Java", "C++", "C#", "Kotlin", "Swift", "Ruby", "Go", "Rust", "SQL"]
-    },
-    {
-      category: "Frameworks",
-      skills: ["MERN Stack", "Three.js", "FreeGLUT"]
-    },
-    {
-      category: "Web Technologies",
-      skills: ["HTML", "CSS", "TypeScript", "PHP", "Ruby on Rails", "Django", "Flask", "Spring", "ASP.NET"]
-    },
-    {
-      category: "Tools & Platforms",
-      skills: ["GitHub", "Azure Functions", "Codecov", "GitBook"]
-    }
-  ];
+export default HeroSection;
 
-  return (
-    <div className="py-16 bg-gray-50">
-      <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold text-center mb-12">Technical Expertise</h2>
-        <div className="grid md:grid-cols-2 gap-8">
-          {expertise.map((category, index) => (
-            <div key={index} className="bg-white rounded-lg shadow-lg p-6">
-              <h3 className="text-xl font-semibold text-blue-600 mb-4">{category.category}</h3>
-              <div className="flex flex-wrap gap-2">
-                {category.skills.map((skill, skillIndex) => (
-                  <span 
-                    key={skillIndex}
-                    className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
-                  >
-                    {skill}
-                  </span>
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
-  );
-};
+// Add these custom animations to your global CSS or Tailwind config
+const style = document.createElement('style');
+style.textContent = `
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+  }
 
-const ExperienceSection = () => (
-  <div className="py-16 bg-white">
-    <div className="container mx-auto px-4">
-      <h2 className="text-4xl font-bold text-center mb-12">Professional Experience</h2>
-      <div className="max-w-3xl mx-auto bg-gray-50 rounded-lg shadow-lg p-6">
-        <div className="border-l-4 border-blue-600 pl-4">
-          <h3 className="text-2xl font-semibold mb-2">Project 90 Intern</h3>
-          <p className="text-gray-600 mb-2">2022</p>
-          <ul className="list-disc list-inside text-gray-600 space-y-2">
-            <li>Contributed to climate change initiatives</li>
-            <li>Developed team coordination skills</li>
-            <li>Enhanced public communication abilities</li>
-            <li>Participated in environmental awareness projects</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-);
+  @keyframes spin-slow {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
 
-// Export all sections as a single component for easy integration
-const AdditionalSections = () => (
-  <>
-    <EducationSection />
-    <ExperienceSection />
-    <TechnicalExpertiseSection />
-    <HobbiesSection />
-  </>
-);
+  @keyframes slideUp {
+    from { transform: translateY(100%); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
 
-export default AdditionalSections;
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-spin-slow {
+    animation: spin-slow 10s linear infinite;
+  }
+
+  .animate-slideUp {
+    animation: slideUp 1s ease-out forwards;
+  }
+`;
+document.head.appendChild(style);
