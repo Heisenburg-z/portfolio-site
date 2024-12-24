@@ -1,0 +1,21 @@
+[debug] [2024-12-24T20:06:45.278Z] ----------------------------------------------------------------------
+[debug] [2024-12-24T20:06:45.280Z] Command:       /home/thapelo/.nvm/versions/node/v18.20.5/bin/node /home/thapelo/.nvm/versions/node/v18.20.5/bin/firebase deploy --only hosting
+[debug] [2024-12-24T20:06:45.281Z] CLI Version:   13.29.1
+[debug] [2024-12-24T20:06:45.281Z] Platform:      linux
+[debug] [2024-12-24T20:06:45.281Z] Node Version:  v18.20.5
+[debug] [2024-12-24T20:06:45.281Z] Time:          Tue Dec 24 2024 22:06:45 GMT+0200 (South Africa Standard Time)
+[debug] [2024-12-24T20:06:45.282Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-12-24T20:06:45.365Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-12-24T20:06:45.366Z] > authorizing via signed-in user (thapelondlovu74@gmail.com)
+[debug] [2024-12-24T20:06:45.366Z] [iam] checking project portfolio-43d9b for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2024-12-24T20:06:45.367Z] Checked if tokens are valid: true, expires at: 1735072153472
+[debug] [2024-12-24T20:06:45.368Z] Checked if tokens are valid: true, expires at: 1735072153472
+[debug] [2024-12-24T20:06:45.369Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/portfolio-43d9b:testIamPermissions [none]
+[debug] [2024-12-24T20:06:45.369Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/portfolio-43d9b:testIamPermissions x-goog-quota-user=projects/portfolio-43d9b
+[debug] [2024-12-24T20:06:45.370Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/portfolio-43d9b:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2024-12-24T20:06:47.185Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/portfolio-43d9b:testIamPermissions 200
+[debug] [2024-12-24T20:06:47.185Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/portfolio-43d9b:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2024-12-24T20:06:47.186Z] Checked if tokens are valid: true, expires at: 1735072153472
+[debug] [2024-12-24T20:06:47.186Z] Checked if tokens are valid: true, expires at: 1735072153472
+[debug] [2024-12-24T20:06:47.187Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/portfolio-43d9b [none]
