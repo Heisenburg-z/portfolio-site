@@ -1,0 +1,39 @@
+[debug] [2024-12-29T10:39:05.222Z] ----------------------------------------------------------------------
+[debug] [2024-12-29T10:39:05.224Z] Command:       /home/thapelo/.nvm/versions/node/v18.20.5/bin/node /home/thapelo/.nvm/versions/node/v18.20.5/bin/firebase deploy --only hosting
+[debug] [2024-12-29T10:39:05.225Z] CLI Version:   13.29.1
+[debug] [2024-12-29T10:39:05.225Z] Platform:      linux
+[debug] [2024-12-29T10:39:05.225Z] Node Version:  v18.20.5
+[debug] [2024-12-29T10:39:05.226Z] Time:          Sun Dec 29 2024 12:39:05 GMT+0200 (South Africa Standard Time)
+[debug] [2024-12-29T10:39:05.226Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-12-29T10:39:05.229Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[debug] [2024-12-29T10:39:05.364Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-12-29T10:39:05.364Z] > authorizing via signed-in user (thapelondlovu74@gmail.com)
+[debug] [2024-12-29T10:39:05.364Z] [iam] checking project portfolio-43d9b for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2024-12-29T10:39:05.365Z] Checked if tokens are valid: false, expires at: 1735076619721
+[debug] [2024-12-29T10:39:05.365Z] Checked if tokens are valid: false, expires at: 1735076619721
+[debug] [2024-12-29T10:39:05.366Z] > refreshing access token with scopes: []
+[debug] [2024-12-29T10:39:05.367Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2024-12-29T10:39:05.367Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2024-12-29T10:39:05.876Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2024-12-29T10:39:05.876Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2024-12-29T10:39:05.890Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/portfolio-43d9b:testIamPermissions [none]
+[debug] [2024-12-29T10:39:05.890Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/portfolio-43d9b:testIamPermissions x-goog-quota-user=projects/portfolio-43d9b
+[debug] [2024-12-29T10:39:05.890Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/portfolio-43d9b:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2024-12-29T10:39:06.169Z] <<< [apiv2][status] GET https://firebase-public.firebaseio.com/cli.json 200
+[debug] [2024-12-29T10:39:06.170Z] <<< [apiv2][body] GET https://firebase-public.firebaseio.com/cli.json {"cloudBuildErrorAfter":1594252800000,"cloudBuildWarnAfter":1590019200000,"defaultNode10After":1594252800000,"minVersion":"3.0.5","node8DeploysDisabledAfter":1613390400000,"node8RuntimeDisabledAfter":1615809600000,"node8WarnAfter":1600128000000}
+[debug] [2024-12-29T10:39:07.912Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/portfolio-43d9b:testIamPermissions 200
+[debug] [2024-12-29T10:39:07.913Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/portfolio-43d9b:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2024-12-29T10:39:07.914Z] Checked if tokens are valid: true, expires at: 1735472344877
+[debug] [2024-12-29T10:39:07.914Z] Checked if tokens are valid: true, expires at: 1735472344877
+[debug] [2024-12-29T10:39:07.915Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/portfolio-43d9b [none]
+[debug] [2024-12-29T10:39:08.607Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/portfolio-43d9b 200
+[debug] [2024-12-29T10:39:08.607Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/portfolio-43d9b {"projectId":"portfolio-43d9b","projectNumber":"885258878009","displayName":"Portfolio","name":"projects/portfolio-43d9b","resources":{"hostingSite":"portfolio-43d9b"},"state":"ACTIVE","etag":"1_0d2fe33a-b1e0-4498-8677-e46e66c2286e"}
+[info] 
+[info] === Deploying to 'portfolio-43d9b'...
+[info] 
+[info] i  deploying hosting 
+[debug] [2024-12-29T10:39:08.615Z] Checked if tokens are valid: true, expires at: 1735472344877
+[debug] [2024-12-29T10:39:08.615Z] Checked if tokens are valid: true, expires at: 1735472344877
+[debug] [2024-12-29T10:39:08.615Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/portfolio-43d9b/versions [none]
+[debug] [2024-12-29T10:39:08.615Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/portfolio-43d9b/versions {"status":"CREATED","labels":{"deployment-tool":"cli-firebase"}}
