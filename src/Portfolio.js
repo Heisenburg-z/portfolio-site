@@ -23,6 +23,15 @@ const PROFILE_IMAGE = './images/me.jpg';
 // Project Data
 const PROJECTS = [
   {
+    "name": "Wits Shell",
+    "description": "A shell program written in C, designed for operating system coursework. It supports parallel execution, output redirection, and built-in commands like 'cd', 'exit', and 'path'. Includes robust error handling and modular design for extensibility.",
+    "technologies": ["C", "Linux", "Unix System Calls", "Operating Systems"],
+    "githubLink": "https://github.com/Heisenburg-z/Operating-Systems",
+    "demoLink": null,
+    "imageUrl": "https://images.unsplash.com/photo-1545262810-77515befe149?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8U0hFTEx8ZW58MHx8MHx8fDA%3D"
+  },
+  
+  {
     name: 'Event & Activities Subsystem',
     description: 'MERN-stack project with "Liked Events" feature and Codecov integration for comprehensive test coverage. Implements real-time updates and interactive UI components.',
     technologies: ['MongoDB', 'Express.js', 'React', 'Node.js', 'Codecov', 'Vercel'],
@@ -53,7 +62,16 @@ const PROJECTS = [
     githubLink: 'https://github.com/Heisenburg-z/Sectional-titles-property-management',
     demoLink: 'https://witty-plant-0efd7e103.5.azurestaticapps.net/',
     imageUrl: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cHJvcGVydHl8ZW58MHx8MHx8fDA%3D'
+  },
+  {
+    "name": "Yale Delivery",
+    "description": "A feature-rich mobile application enabling users to order and track deliveries in real time via an interactive map interface. The app provides a seamless experience for managing orders, tracking delivery status, and ensuring customer satisfaction.",
+    "technologies": ["Android Studio", "Java", "Firebase", "Google Maps API"],
+    "githubLink": "https://github.com/Heisenburg-z/Yale",
+    "demoLink": "https://github.com/Heisenburg-z/Yale",
+    "imageUrl": "https://images.unsplash.com/photo-1611068562065-994ba66501ba?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8ZGVsaXZlcnl8ZW58MHx8MHx8fDA%3D"
   }
+  
 ];
 
 const PortfolioWebsite = () => {
