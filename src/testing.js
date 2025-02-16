@@ -1,117 +1,208 @@
-import React from 'react';
-import { ChevronDown } from 'lucide-react';
+import React, { useState } from 'react';
+import { FaUser, FaPlus, FaShoppingCart, FaExchangeAlt } from 'react-icons/fa';
+import ProductCard from './ProductCard';
 
-const AnimatedText = ({ children, delay = '0s' }) => (
-  <div className="overflow-hidden">
-    <div 
-      className="animate-slideUp" 
-      style={{ animationDelay: delay }}
-    >
-      {children}
-    </div>
-  </div>
-);
+const UserDashboard = ({ user, onLogout }) => {
+  const [activeTab, setActiveTab] = useState('dashboard');
+  const [listings, setListings] = useState([]);
+  const [newListing, setNewListing] = useState({
+    title: '',
+    description: '',
+    price: '',
+    category: '',
+    image: ''
+  });
 
-const HeroSection = () => {
-  const scrollToSection = (id) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+  // Sample data 
+  const userStats = {
+    itemsBought: 12,
+    itemsSold: 8,
+    activeListings: 5,
+    tradeRequests: 3
+  };
+
+  const handleSellItem = (e) => {
+    e.preventDefault();
+    setListings([...listings, { ...newListing, id: Date.now() }]);
+    setNewListing({
+      title: '',
+      description: '',
+      price: '',
+      category: '',
+      image: ''
+    });
   };
 
   return (
-    <div 
-      className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 to-blue-900 text-white overflow-hidden"
-    >
-      {/* Animated background dots */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute w-4 h-4 bg-blue-500 rounded-full animate-float top-1/4 left-1/4 opacity-20"></div>
-        <div className="absolute w-6 h-6 bg-blue-400 rounded-full animate-float top-3/4 left-1/3 opacity-20" 
-             style={{ animationDelay: '1s' }}></div>
-        <div className="absolute w-3 h-3 bg-blue-300 rounded-full animate-float top-1/2 right-1/4 opacity-20"
-             style={{ animationDelay: '2s' }}></div>
-      </div>
-
-      <div className="text-center px-4 relative z-10">
-        {/* Profile image with animated ring */}
-        <div className="relative w-48 h-48 mx-auto mb-6 animate-fadeIn">
-          <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 animate-spin-slow"></div>
-          <div className="absolute inset-2 rounded-full bg-gradient-to-br from-gray-900 to-blue-900"></div>
-          <img 
-            src="/api/placeholder/192/192"
-            alt="Thapelo Ndlovu" 
-            className="relative w-full h-full rounded-full object-cover border-4 border-blue-500 shadow-2xl animate-fadeIn"
-          />
-          <div className="absolute -inset-2 rounded-full border-2 border-blue-500 opacity-50 animate-ping"></div>
+    <div className="min-h-screen bg-gray-50">
+      {/* Dashboard Navbar */}
+      <nav className="bg-white shadow-lg">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="flex justify-between items-center h-16">
+            <div className="flex items-center">
+              <span className="text-2xl font-bold text-indigo-600">CampusTrade</span>
+            </div>
+            <div className="flex items-center space-x-6">
+              <button 
+                onClick={() => setActiveTab('buy')}
+                className="flex items-center text-gray-600 hover:text-indigo-600"
+              >
+                <FaShoppingCart className="mr-2" /> Buy
+              </button>
+              <button 
+                onClick={() => setActiveTab('sell')}
+                className="flex items-center text-gray-600 hover:text-indigo-600"
+              >
+                <FaPlus className="mr-2" /> Sell
+              </button>
+              <button 
+                onClick={() => setActiveTab('trades')}
+                className="flex items-center text-gray-600 hover:text-indigo-600"
+              >
+                <FaExchangeAlt className="mr-2" /> Trades
+              </button>
+              <div className="relative group">
+                <button className="flex items-center space-x-2">
+                  <FaUser className="text-indigo-600" />
+                  <span className="text-gray-700">{user.username}</span>
+                </button>
+                <div className="absolute right-0 hidden group-hover:block bg-white shadow-lg rounded-lg p-4 min-w-[200px]">
+                  <button 
+                    onClick={onLogout}
+                    className="w-full text-left p-2 hover:bg-gray-100 rounded"
+                  >
+                    Logout
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+      </nav>
 
-        {/* Animated text sections */}
-        <AnimatedText delay="0.5s">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent">
-            Hi, I'm Thapelo Ndlovu
-          </h1>
-        </AnimatedText>
+      {/* Dashboard Content */}
+      <div className="max-w-7xl mx-auto px-4 py-8">
+        {activeTab === 'dashboard' && (
+          <div className="bg-white rounded-lg shadow p-6 mb-8">
+            <h2 className="text-3xl font-bold text-indigo-600 mb-6">Welcome Back, {user.username}!</h2>
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
+              <div className="bg-indigo-50 p-4 rounded-lg">
+                <h3 className="text-gray-600">Items Bought</h3>
+                <p className="text-2xl font-bold text-indigo-600">{userStats.itemsBought}</p>
+              </div>
+              <div className="bg-indigo-50 p-4 rounded-lg">
+                <h3 className="text-gray-600">Items Sold</h3>
+                <p className="text-2xl font-bold text-indigo-600">{userStats.itemsSold}</p>
+              </div>
+              <div className="bg-indigo-50 p-4 rounded-lg">
+                <h3 className="text-gray-600">Active Listings</h3>
+                <p className="text-2xl font-bold text-indigo-600">{userStats.activeListings}</p>
+              </div>
+              <div className="bg-indigo-50 p-4 rounded-lg">
+                <h3 className="text-gray-600">Trade Requests</h3>
+                <p className="text-2xl font-bold text-indigo-600">{userStats.tradeRequests}</p>
+              </div>
+            </div>
+          </div>
+        )}
 
-        <AnimatedText delay="0.7s">
-          <p className="text-xl md:text-2xl mb-6 text-blue-50">
-            A driven Computer Science student specializing in software design, web development, 
-            and computer applications, with expertise in parallel computing, machine learning, 
-            and operating systems. Leveraging a solid foundation in applied mathematics to 
-            solve complex problems and create innovative solutions. Passionate about translating 
-            theoretical concepts into impactful real-world applications.
-          </p>
-        </AnimatedText>
+        {activeTab === 'sell' && (
+          <div className="bg-white rounded-lg shadow p-6 mb-8">
+            <h2 className="text-2xl font-bold text-indigo-600 mb-6">Sell an Item</h2>
+            <form onSubmit={handleSellItem} className="space-y-4">
+              <div>
+                <label className="block text-gray-700 mb-2">Item Title</label>
+                <input
+                  type="text"
+                  required
+                  className="w-full p-2 border rounded"
+                  value={newListing.title}
+                  onChange={(e) => setNewListing({...newListing, title: e.target.value})}
+                />
+              </div>
+              <div>
+                <label className="block text-gray-700 mb-2">Description</label>
+                <textarea
+                  className="w-full p-2 border rounded"
+                  rows="4"
+                  value={newListing.description}
+                  onChange={(e) => setNewListing({...newListing, description: e.target.value})}
+                />
+              </div>
+              <div className="grid grid-cols-2 gap-4">
+                <div>
+                  <label className="block text-gray-700 mb-2">Price</label>
+                  <input
+                    type="number"
+                    required
+                    className="w-full p-2 border rounded"
+                    value={newListing.price}
+                    onChange={(e) => setNewListing({...newListing, price: e.target.value})}
+                  />
+                </div>
+                <div>
+                  <label className="block text-gray-700 mb-2">Category</label>
+                  <select
+                    className="w-full p-2 border rounded"
+                    value={newListing.category}
+                    onChange={(e) => setNewListing({...newListing, category: e.target.value})}
+                  >
+                    <option value="">Select Category</option>
+                    <option value="Books">Books</option>
+                    <option value="Electronics">Electronics</option>
+                    <option value="Furniture">Furniture</option>
+                  </select>
+                </div>
+              </div>
+              <button
+                type="submit"
+                className="bg-indigo-600 text-white px-6 py-2 rounded hover:bg-indigo-700"
+              >
+                List Item
+              </button>
+            </form>
+          </div>
+        )}
 
-        {/* Animated buttons */}
-        <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4 animate-fadeIn" 
-             style={{ animationDelay: '1s' }}>
-          <button 
-            onClick={() => scrollToSection('projects')}
-            className="group bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-full flex items-center justify-center transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
-          >
-            View Projects 
-            <ChevronDown className="ml-2 group-hover:animate-bounce" />
-          </button>
-          <button 
-            onClick={() => scrollToSection('contact')}
-            className="border border-white hover:bg-white hover:text-gray-900 px-6 py-3 rounded-full transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
-          >
-            Contact Me
-          </button>
-        </div>
+        {activeTab === 'buy' && (
+          <div>
+            <h2 className="text-2xl font-bold text-indigo-600 mb-6">Available Items</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {/* Reuse ProductCard component */}
+              {listings.map(item => (
+                <ProductCard key={item.id} product={item} />
+              ))}
+            </div>
+          </div>
+        )}
+
+        {activeTab === 'trades' && (
+          <div className="bg-white rounded-lg shadow p-6">
+            <h2 className="text-2xl font-bold text-indigo-600 mb-6">Trade Requests</h2>
+            <div className="space-y-4">
+              {/* Sample trade request - implement actual trade logic */}
+              <div className="p-4 border rounded-lg hover:bg-gray-50">
+                <div className="flex justify-between items-center">
+                  <div>
+                    <h3 className="font-semibold">Trade request for Calculus Textbook</h3>
+                    <p className="text-gray-600">From: Thapelo Ndlovu</p>
+                  </div>
+                  <div className="flex gap-2">
+                    <button className="px-4 py-2 bg-green-100 text-green-800 rounded">
+                      Accept
+                    </button>
+                    <button className="px-4 py-2 bg-red-100 text-red-800 rounded">
+                      Decline
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );
 };
 
-export default HeroSection;
-
-// Add these custom animations to your global CSS or Tailwind config
-const style = document.createElement('style');
-style.textContent = `
-  @keyframes float {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-20px); }
-  }
-
-  @keyframes spin-slow {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
-  }
-
-  @keyframes slideUp {
-    from { transform: translateY(100%); opacity: 0; }
-    to { transform: translateY(0); opacity: 1; }
-  }
-
-  .animate-float {
-    animation: float 6s ease-in-out infinite;
-  }
-
-  .animate-spin-slow {
-    animation: spin-slow 10s linear infinite;
-  }
-
-  .animate-slideUp {
-    animation: slideUp 1s ease-out forwards;
-  }
-`;
-document.head.appendChild(style);
+export default UserDashboard;

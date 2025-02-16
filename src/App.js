@@ -1,10 +1,15 @@
+//App.js
+import { Import } from 'lucide-react';
 import React from 'react';
-import Portfolio from './Portfolio'; // Adjust the path if needed
+import HomePage from './HomePage';
+import UserDashboardTest from './userDashboardTest';  
+
 
 function App() {
   return (
     <div className="App">
-      <Portfolio />
+      <HomePage/>
+      <UserDashboardTest/> 
     </div>
   );
 }
